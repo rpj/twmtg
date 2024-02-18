@@ -1,0 +1,37 @@
+<div>
+    <h2>Ruling:</h2>
+    
+    <h3>
+    {{#TMPL_legal}}
+    <span class="legal" style="color: green; text-shadow: 0px 0px 25px rgb(45, 208, 45);">Legal</span>
+    {{/TMPL_legal}}
+    {{^TMPL_legal}}
+    <span style="color: red; font-variant: small-caps; text-shadow: 0px 0px 25px rgb(215, 90, 90);">Illegal</span>
+    {{/TMPL_legal}}
+    </h3>
+
+    <div>Word count: <b>{{ num_words }}</b></div>
+
+    <h3 style="font-variant: small-caps;">"{{ name }}"</h3>
+
+    Checked text:
+    <div class="cardText"
+        style="margin: 1em; padding: 1em; border: 1px solid rgb(85, 45, 45); border-radius: 0.2em; background-color: rgb(220, 223, 255)">
+        {{{ legality_checked_text }}}
+    </div>
+    
+    <details style="margin-bottom: 1vh;">
+        <summary>Full text:</summary>
+        <div class="cardText"
+            style="margin: 1em; padding: 1em; border: 1px solid rgb(85, 45, 45); border-radius: 0.2em; background-color: rgb(220, 223, 255)">
+            {{{ text }}}
+        </div>
+    </details>
+
+    <div style="font-size: 80%;">
+        Printings:
+        {{#tcgplayer_links}}
+        <a href="{{ link }}" target="_blank">{{ set }}</a>
+        {{/tcgplayer_links}}
+    </div>
+</div>
